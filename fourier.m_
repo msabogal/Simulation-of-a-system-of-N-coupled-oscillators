@@ -1,0 +1,11 @@
+clc; clear all; close all; 
+
+dt=1e-2; t=-10:dt:10;a=1;sigma=2;y=a*exp(-(t.*t)/sigma); 
+figure(1); plot(t,y); 
+N=length(t); n=-N/2:1:N/2; f=n/(N*dt); f=f(1:length(f)-1); 
+
+H=fft(y); H= fftshift ; ha= abs(H); 
+
+%k=0:1:N-1; tk=k*dt; hk=a*exp(-(tk.*tk)/sigma); 
+%inte= hk.*exp(); 
+%H= dt* sum()
